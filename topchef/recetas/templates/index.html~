@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<title>Top Chef</title>
+	</head>
+	<body>
+		{% if %}
+		{% else %}
+			<table border="2">
+				<tr>
+					<td>Nombre</td>
+					<td>Fecha</td>
+				</tr>
+				{% for receta in lista_recetas %}
+					<tr>
+						<td>{{ receta.nombre }}</td>
+						<td>{{ receta.fecha }}</td>
+					</tr>
+				{% endfor %}
+			</table>
+		{% endif %}
+	</body>
+</html>

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from recetas.models import Receta
+from recetas.models import Pregunta
 
 # Create your views here.
 
