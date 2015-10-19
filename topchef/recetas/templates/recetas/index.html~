@@ -12,12 +12,12 @@
 				{% for receta in lista_recetas %}
 					<tr>
 						<td>{{ receta.nombre }}</td>
-						<td>{{ receta.fecha }}</td>
+						<td>{{ receta.fecha|date:"M d, Y" }}</td>
 					</tr>
 				{% endfor %}
 			</table>
 		{% else %}
-			<p>No haya recetas</p>			
+			<p>No hay recetas</p>			
 		{% endif %}
 	</body>
 </html>
