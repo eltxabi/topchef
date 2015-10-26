@@ -11,8 +11,8 @@
 				</tr>
 				{% for receta in lista_recetas %}
 					<tr>
-						<td>{{ receta.nombre }}</td>
-						<td>{{ receta.fecha|date:"M d, Y" }}</td>
+						<td><a href="{% url 'detalle' receta.id %}">{{ receta.nombre }}</a></td>
+						<td>{{ receta.fecha|date:"D d M Y - H:i" }}</td>
 					</tr>
 				{% endfor %}
 			</table>
