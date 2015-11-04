@@ -1,0 +1,13 @@
+<html>
+	<head>
+		<title>Top Chef</title>
+	</head>
+	<body>
+		<h1>Añadir Receta</h1>
+		<form method="POST"> {% csrf_token %}
+			{{ form.as_p }}
+			<button type="submit">Guardar</button>
+		</form>
+		<a href="{% url 'indice' %}">Volver</a>			
+	</body>
+</html>

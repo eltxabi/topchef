@@ -5,6 +5,7 @@
 	<body>
 		{% if user.is_authenticated %}
 			<p>Soy {{ user.get_username }}</p>
+			<a href="{% url 'addreceta' %}">Añadir Receta</a>
 		{% endif %}
 		<nav>
 			<ul>

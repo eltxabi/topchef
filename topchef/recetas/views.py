@@ -3,6 +3,8 @@ from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
 from django.contrib.auth import login,logout,authenticate
 from django.http import HttpResponseRedirect
 from recetas.models import Receta
+from recetas.forms import RecetaForm
+
 
 # Create your views here.
 
@@ -41,4 +43,18 @@ def loginpage(request):
 def logoutpage(request):
 	logout(request)
 	return HttpResponseRedirect("/")
+
+def addreceta(request):
+	if request.method == "POST":
+		form = RecetaForm(request.POST)
+		if form.is_valid():
+			receta = form.save()
+			receta.save()
+			return HttpResponseRedirect("/")
+	else:
+		form = RecetaForm()
+	return render(request, 'recetas/add_receta.html', {'form': form})
+ 
+
+
 

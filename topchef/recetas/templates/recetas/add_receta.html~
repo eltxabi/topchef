@@ -1,0 +1,10 @@
+<html>
+	<head>
+		<title>Top Chef</title>
+	</head>
+	<body>
+		<h1>Añadir Receta</h1>
+		
+		<a href="{% url 'indice' %}">Volver</a>			
+	</body>
+</html>
