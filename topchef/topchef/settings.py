@@ -52,6 +52,7 @@ MIDDLEWARE_CLASSES = (
 )
 
 ROOT_URLCONF = 'topchef.urls'
+LOGIN_URL = '/login'
 
 TEMPLATES = [
     {
