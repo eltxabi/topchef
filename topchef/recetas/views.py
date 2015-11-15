@@ -48,7 +48,7 @@ def logoutpage(request):
 @login_required
 def addreceta(request):
 	if request.method == "POST":
-		form = RecetaForm(request.POST)
+		form = RecetaForm(request.POST, request.FILES)
 		if form.is_valid():
 			receta = form.save()
 			receta.save()

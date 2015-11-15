@@ -36,7 +36,7 @@ def loginpage(request):
 		user = authenticate(username=username,password=password)
 		if user is not None:
 			login(request,user)
-			return HttpResponseRedirect("/")
+			return HttpResponseRedirect(request.GET.get('next'))
 	else:
 		form = AuthenticationForm()
 	return render(request,'recetas/login.html', {'form': form,})  
@@ -48,9 +48,10 @@ def logoutpage(request):
 @login_required
 def addreceta(request):
 	if request.method == "POST":
-		form = RecetaForm(request.POST)
+		form = RecetaForm(request.POST, request.FILES)
 		if form.is_valid():
 			receta = form.save()
+			print(receta.foto)
 			receta.save()
 			return HttpResponseRedirect("/")
 	else:

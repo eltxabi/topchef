@@ -5,4 +5,4 @@ class RecetaForm(forms.ModelForm):
 
 	class Meta:
 		model = Receta
-		fields = ('nombre','ingredientes','instrucciones',)
+		fields = ('nombre','ingredientes','foto','instrucciones',)

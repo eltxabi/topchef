@@ -1,10 +1,13 @@
+{% load staticfiles %}
 <html>
 	<head>
 		<title>Top Chef</title>
+		<link rel="stylesheet" type="text/css" href="{% static "recetas.css" %}">
 	</head>
 	<body>
 		{% if user.is_authenticated %}
 			<p>Soy {{ user.get_username }}</p>
+			<a href="{% url 'addreceta' %}">Añadir Receta</a>
 		{% endif %}
 		<nav>
 			<ul>
