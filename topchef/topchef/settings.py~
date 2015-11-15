@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+	 'recetas',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -51,6 +52,7 @@ MIDDLEWARE_CLASSES = (
 )
 
 ROOT_URLCONF = 'topchef.urls'
+LOGIN_URL = '/login'
 
 TEMPLATES = [
     {

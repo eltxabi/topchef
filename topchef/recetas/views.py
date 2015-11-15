@@ -4,6 +4,7 @@ from django.contrib.auth import login,logout,authenticate
 from django.http import HttpResponseRedirect
 from recetas.models import Receta
 from recetas.forms import RecetaForm
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -35,7 +36,7 @@ def loginpage(request):
 		user = authenticate(username=username,password=password)
 		if user is not None:
 			login(request,user)
-			return HttpResponseRedirect("/")
+			return HttpResponseRedirect(request.GET.get('next'))
 	else:
 		form = AuthenticationForm()
 	return render(request,'recetas/login.html', {'form': form,})  
@@ -44,6 +45,7 @@ def logoutpage(request):
 	logout(request)
 	return HttpResponseRedirect("/")
 
+@login_required
 def addreceta(request):
 	if request.method == "POST":
 		form = RecetaForm(request.POST)
